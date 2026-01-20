@@ -2,11 +2,11 @@
 
 # :nocov:
 module LedgerSync
-  VERSION = '2.5.0'
+  VERSION = '3.0.4'
 
   def self.version
     if ENV['PRE_RELEASE']
-      "#{VERSION}.pre.#{ENV['GITHUB_RUN_NUMBER']}"
+      "#{VERSION}.pre.#{ENV.fetch('GITHUB_RUN_NUMBER', nil)}"
     else
       VERSION
     end
